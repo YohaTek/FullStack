@@ -8,31 +8,69 @@ body {
     color: #333;
 }
 
+/* Top Bar Styles */
+.top-bar {
+    background: #444;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-align: right;
+    font-size: 0.9em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
 /* Header Styles */
 header {
     background: #333;
     color: #fff;
     padding: 1em 0;
     text-align: center;
+    position: fixed;
+    top: 2.5em; /* Adjust based on the height of the top bar */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .logo h1 {
     margin: 0;
     font-size: 2em;
+    padding-left: 20px; /* Add padding if needed */
 }
 
 nav {
-    margin: 1em 0;
+    display: inline-block;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1em;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
 }
 
 nav ul li a {
@@ -45,9 +83,78 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Dropdown Menu Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Position the dropdown content below the link */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-columns {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.dropdown-column {
+    flex: 1;
+    margin: 10px;
+}
+
+.dropdown-column h3 {
+    margin-top: 0;
+}
+
+/* Search Container Styles */
+.search-container {
+    display: inline-flex;
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    width: 0;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    transition: width 0.4s ease-in-out;
+    background: #fff;
+    color: #333;
+}
+
+.search-container input[type="text"]:focus, 
+.search-container input[type="text"]:hover {
+    width: 200px;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.search-container button i {
+    padding: 0 10px;
+}
+
 /* Main Content Styles */
 main {
-    padding: 2em;
+    padding-top: 7em; /* Adjust padding-top to ensure content is not covered by the fixed header and top bar */
+    padding: 2em 0; /* Adjust bottom padding */
+    width: 80%;
+    margin: 0 auto; /* Center align the main content */
     background-color: #fff;
 }
 
@@ -104,18 +211,68 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Chat Bot Styles */
+.chat-bot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-bot.open {
+    display: none;
+}
+
+.chat-bot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.chat-bot a:hover {
+    text-decoration: underline;
+}
+
+.chat-bot .fa-times {
+    margin-left: 10px;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1em;
+    }
+
     nav ul {
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
-        display: block;
         margin: 0.5em 0;
     }
 
+    .search-container input[type="text"] {
+        width: 200px;
+    }
+
     main {
-        padding: 1em;
+        padding: 7.5em 1em 2em 1em; /* Adjust padding-top for mobile view */
+        width: 90%; /* Adjust width for mobile view */
+    }
+
+    .dropdown-columns {
+        flex-direction: column;
+    }
+
+    .dropdown-column {
+        margin: 5px;
     }
 }
