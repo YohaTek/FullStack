@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MHGEW Data and Communication Networking Company</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Data and Communication Networking Company</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="top-bar">
+        <div class="language-switcher">
+            <a href="#">EN</a> | <a href="#">ES</a> | <a href="#">FR</a>
+        </div>
+    </div>
     <header>
         <div class="logo">
-            <h1>MHGEW Networking Solutions</h1>
+            <h1>Networking Solutions</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <div class="dropdown-column">
+                                <h3>Network Design</h3>
+                                <p>We provide top-notch network design solutions to ensure seamless communication within your organization.</p>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Implementation and Support</h3>
+                                <p>Our team offers implementation and ongoing support to keep your network running smoothly.</p>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Security Solutions</h3>
+                                <p>Protect your data with our advanced security solutions tailored to your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#about" class="dropbtn">About Us <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <div class="dropdown-column">
+                                <h3>Our History</h3>
+                                <p>Networking Solutions has been a leader in the data and communication networking industry for over 20 years.</p>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Our Mission</h3>
+                                <p>Our mission is to provide the best networking solutions to our clients.</p>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Our Team</h3>
+                                <p>Meet our dedicated team of professionals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="search-container">
+                    <input type="text" id="search" name="search" placeholder="Search..." value="Search..." />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -29,23 +76,10 @@
 
         <section id="services">
             <h2>Our Services</h2>
-            <article>
-                <h3>Network Design</h3>
-                <p>We provide top-notch network design solutions to ensure seamless communication within your organization.</p>
-            </article>
-            <article>
-                <h3>Implementation and Support</h3>
-                <p>Our team offers implementation and ongoing support to keep your network running smoothly.</p>
-            </article>
-            <article>
-                <h3>Security Solutions</h3>
-                <p>Protect your data with our advanced security solutions tailored to your needs.</p>
-            </article>
         </section>
 
         <section id="about">
             <h2>About Us</h2>
-            <p>Networking Solutions has been a leader in the data and communication networking industry for over 20 years.</p>
         </section>
 
         <aside>
@@ -62,5 +96,19 @@
             <a href="https://www.linkedin.com">LinkedIn</a>
         </p>
     </footer>
+
+    <div class="chat-bot">
+        <a href="#" class="chat-toggle">
+            Chat with us <i class="fa fa-times"></i>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript to toggle the chat box visibility
+        document.querySelector('.chat-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.chat-bot').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
