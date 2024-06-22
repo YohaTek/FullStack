@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Networking Solutions</title>
+    <link rel="stylesheet" href="C:/Users/yohan/Desktop/FullStack/css/styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="language-switcher">
+            <a href="#"><img src="images/gb.png" alt="English" class="flag-icon"></a> | 
+            <a href="#"><img src="images/nl.png" alt="Dutch" class="flag-icon"></a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1>Networking Solutions</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="search-container">
+                    <input type="text" id="search" name="search" placeholder="Search..."/>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="contact-form-handler.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Networking Solutions. All rights reserved.</p>
+        <p>Follow us on:
+            <a href="https://www.facebook.com">Facebook</a> |
+            <a href="https://www.twitter.com">Twitter</a> |
+            <a href="https://www.linkedin.com">LinkedIn</a>
+        </p>
+    </footer>
+
+    <div class="chat-bot">
+        <a href="#" class="chat-toggle">
+            Chat with us <i class="fa fa-times"></i>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript to toggle the chat box visibility
+        document.querySelector('.chat-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.chat-bot').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
