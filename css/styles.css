@@ -204,11 +204,13 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 main {
+    top: 100em;
     padding-top: 7em; /* Adjust padding-top to ensure content is not covered by the fixed header and top bar */
     padding: 2em 0; /* Adjust bottom padding */
     width: 70%;
     margin: 0 auto; /* Center align the main content */
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #000;
 }
 
 main h2 {
