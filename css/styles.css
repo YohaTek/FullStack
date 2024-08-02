@@ -223,6 +223,17 @@ section {
     margin-bottom: 2em;
 }
 
+#banner {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white; /* Optional: sets the text color */
+    text-align: center; /* Optional: centers the text horizontally */
+    display: flex; /* Optional: flex container for aligning content */
+    align-items: center; /* Optional: centers the content vertically */
+    justify-content: center; /* Optional: centers the content horizontally */
+}
+
 article {
     margin-bottom: 1.5em;
 }
